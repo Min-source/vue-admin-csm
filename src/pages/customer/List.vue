@@ -12,7 +12,7 @@
         <el-table-column label="操作">
             <template v-slot="slot">
                 <a href="" @click.prevent="toDeleteHandler(slot.row.id)">删除</a>
-                <a href="" @click.prevent="toUpdateHandler(slot.row.id)">修改</a>
+                <a href="" @click.prevent="toUpdateHandler(slot.row)">修改</a>
             </template>
         </el-table-column>
         </el-table>
@@ -104,7 +104,7 @@ export default {
           type: 'warning'
         }).then(() => {
             //调用后台接口，完成删除操作
-            let url="http://localhost:6677/product/deleteById?id="+id;
+            let url="http://localhost:6677/customer/deleteById?id="+id;
             request.get(url).then((response)=>{
               //1.刷新数据
               this.loadData();

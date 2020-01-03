@@ -1,7 +1,7 @@
 <template>
     <div>
     <h3>栏目管理</h3>
-    <el-button size="small" type="primary" @click="toAddDHandler">添加</el-button>
+    <el-button size="small" type="primary" @click="toAddHandler">添加</el-button>
     <el-button size="small" type="danger">删除</el-button>
     <el-table :data="columns">
         <el-table-column label="编号" prop="id"></el-table-column>
@@ -79,7 +79,7 @@ export default {
             this.title="修改栏目信息";
             this.visible=true;
         },
-        toAddDHandler(){
+        toAddHandler(){
             this.title="录入栏目信息";
             this.visible=true;
         },
